@@ -9,6 +9,17 @@
 <ion-content>
   <div class="ion-padding">
     The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be
+      your guide.</p>
   </div>
+
+  <ion-item>
+    <ion-input #user2 type="tel" maxlength="14" minlength="4" [(ngModel)]="numpad" name="userCount"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-select [(ngModel)]="selectedCode" (ionChange)="valueChangedSoRouteToPage2()">
+      <ion-select-option *ngFor="let user of users" [value]="user.id">
+        {{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>
+  </ion-item>
 </ion-content>
